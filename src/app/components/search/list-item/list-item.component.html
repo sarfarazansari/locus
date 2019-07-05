@@ -1,0 +1,7 @@
+<li class="list-group-item">
+  <p class="mb-1"><strong innerHTML="{{ item.id | highlight : term}}"></strong></p>
+  <p class="mb-1"><i innerHTML="{{ item.name | highlight : term}}"></i></p>
+  <p class="mb-1" innerHTML="{{ item.items.toString() | highlight : term}}"></p>
+  <address class="mb-1" innerHTML="{{ item.address | highlight : term}}"></address>
+  <address class="mb-1" innerHTML="{{ item.pincode | highlight : term}}"></address>
+</li>

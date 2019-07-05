@@ -1,0 +1,29 @@
+
+<section>
+  <div class="form-group">
+    <input type="search" class="form-control" placeholder="Search by user id, address, name" (keyup)="handleKeyUp($event)" #input>
+  </div>
+
+  <ng-container *ngIf="isOpen">
+    <section class="scroll-box" #scrollerRef
+      [clickOutsideEnabled]="true"
+      [exclude]= "defaultExcludedTags"
+      [delayClickOutsideInit]="true"
+      (clickOutside)="handleOutSideClick($event)">
+      <ul class="list-group text-left" #listItem>
+        <!-- No result block -->
+        <li class="align-items-center d-flex empty justify-content-center list-group-item" *ngIf="(users | filter: ['id', 'name', 'items', 'address', 'pincode'] : input.value).length === 0">
+          No User Found!
+        </li>
+        <!-- No result block end -->
+        <app-list-item
+          (click)="itemSelected($event, user)"
+          (mousemove)="handleMouseEvent($event, user)"
+          [term]="input.value"
+          *ngFor="let user of users | filter: ['id', 'name', 'items', 'address', 'pincode'] : input.value; index as index"
+          [item]="user">
+        </app-list-item>
+      </ul>
+    </section>
+  </ng-container>
+</section>

@@ -1,0 +1,15 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  ul{
+    list-style: none;
+    .empty{
+      min-height: 122px;
+    }
+  }
+  .scroll-box{
+    height: 340px;
+    overflow: auto;
+  }
+}

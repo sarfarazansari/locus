@@ -1,0 +1,11 @@
+:host{
+  &.active {
+    .list-group-item{
+      background-color: #f7f5e3;
+      color: #000;
+    }
+  }
+  mark{
+    padding: 0 !important;
+  }
+}
